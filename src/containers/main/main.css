@@ -1,0 +1,262 @@
+.main__header {
+    padding-top: 150px;
+    padding-bottom: 480px;
+    background-image: linear-gradient(318deg, #00caf1, #00a0e2 88%, #009ae0);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+}
+
+.main__container {
+    flex: 1 1 100%;
+    margin: auto;
+    padding-left: 16px;
+    padding-right: 16px;
+    width: 100%;
+}
+
+.left-container {
+    padding-top: 190px;
+    padding-left: 5%;
+    padding-right: 3%;
+}
+
+@media (min-width: 0) {
+    .flex.xs12 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+}
+
+@media (min-width: 960px) {
+    .flex.md6 {
+        flex-basis: 50%;
+        max-width: 50%;
+    }
+}
+
+
+.flex {
+    flex: 1 1 auto;
+}
+
+.title-1 {
+    font-family: Roboto;
+    font-size: 64px;
+    font-weight: 700;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: 1.4px;
+    color: #fff;
+}
+
+.title-2 {
+    font-family: Roboto;
+    font-size: 35px;
+    font-weight: 300;
+    letter-spacing: .8px;
+    color: #fff;
+    margin-bottom: 45px;
+}
+
+.header__text {
+    font-family: Roboto;
+    font-size: 20px;
+    color: #fff;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+.mt-5 {
+    margin-top: 48px;
+}
+
+.header__layout.wrap {
+    flex-wrap: wrap;
+}
+
+.header__layout {
+    display: flex;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+}
+
+.header__social-media-btn .btn-content {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.header__social-media-btn {
+    text-decoration: none;
+    width: 90%;
+    max-width: 220px;
+    position: relative;
+    border-radius: 6px;
+    background-color: #fff;
+    padding: 8px 35px 8px 50px;
+    box-shadow: 0 7px 20px 0 rgba(0, 0, 0, .19);
+    font-family: Roboto;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: .4px;
+    color: #000;
+    transition: all .2s;
+}
+
+.header__social-media-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 20px 0 rgba(0, 0, 0, .19);
+}
+
+.header__social-media-btn .btn-content .btn-top {
+    font-size: 13px;
+}
+
+.header__social-media-btn .icon {
+    width: 30px;
+    position: absolute;
+    left: 15px;
+    top: 18px;
+}
+
+button,
+input,
+select,
+textarea {
+    background-color: transparent;
+    border-style: none;
+    color: inherit;
+}
+
+
+.header-pic {
+    position: relative;
+    object-fit: contain;
+    top: 140px;
+    right: -17%;
+    width: 78%;
+}
+
+@-webkit-keyframes plane-1-data-v-68aeb9ef {
+    0% {
+        opacity: 0.3;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        -webkit-transform: translateX(400px) translateY(-300px);
+        transform: translateX(400px) translateY(-300px);
+        opacity: 0;
+    }
+}
+
+@keyframes plane-1-data-v-68aeb9ef {
+    0% {
+        opacity: 0.3;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        -webkit-transform: translateX(400px) translateY(-300px);
+        transform: translateX(400px) translateY(-300px);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes plane-2-data-v-68aeb9ef {
+    0% {
+        opacity: 0.3;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        -webkit-transform: translateX(-400px) translateY(400px);
+        transform: translateX(-400px) translateY(400px);
+        opacity: 0;
+    }
+}
+
+@keyframes plane-2-data-v-68aeb9ef {
+    0% {
+        opacity: 0.3;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.8;
+    }
+
+    100% {
+        -webkit-transform: translateX(-400px) translateY(400px);
+        transform: translateX(-400px) translateY(400px);
+        opacity: 0;
+    }
+}
+
+.plane-1 {
+    position: absolute;
+    top: 60%;
+    left: 0;
+    animation: plane-1-data-v-68aeb9ef ease-in 10s infinite;
+    z-index: 2;
+}
+
+.plane-2 {
+    position: absolute;
+    top: 17%;
+    left: 75%;
+    animation: plane-2-data-v-68aeb9ef ease-in 10s infinite;
+    animation-delay: .2s;
+    z-index: 2;
+}
+
+.cloud-2 {
+    position: absolute;
+    top: 25%;
+    left: 20%;
+}
+
+.cloud-3 {
+    position: absolute;
+    top: 5%;
+    left: 35%;
+    opacity: .2;
+}
+
+.cloud-4 {
+    position: absolute;
+    top: 20%;
+    left: 65%;
+}
+
+.cloud-5 {
+    position: absolute;
+    top: 10%;
+    left: 83%;
+}

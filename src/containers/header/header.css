@@ -8,7 +8,7 @@
 }
 
 nav {
-    background-color: red;
+    position: relative;
     z-index: 1;
     height: 210px;
     background-image: url('/src/assets/test_navbar.40a4c0b.svg');
