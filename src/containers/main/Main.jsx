@@ -1,4 +1,8 @@
-import react from "react";
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+
+
 import group from '../../assets/group-16.563a76a.svg'
 import icon_panel_1 from '../../assets/icon-panel-1.svg'
 import icon_panel_2 from '../../assets/icon-panel-2.svg'
@@ -12,7 +16,26 @@ import Screen_4 from '../../assets/Screen_4.png'
 import Screen_5 from '../../assets/Screen_5.png'
 import './main.css'
 
+gsap.registerPlugin(ScrollTrigger);
+
 const Main = () => {
+    const pinRef = useRef(null);
+    React.useLayoutEffect(() => {
+        setTimeout(() => {
+            gsap.to(pinRef.current, {
+                scrollTrigger: {
+                    trigger: pinRef.current,
+                    start: "top 10%",
+                    pin: true,
+                    markers: true
+                }
+            });
+        }, 1000);
+        //   ScrollTrigger.getById(".scrollmagic-pin-spacer").kill();
+
+    }, [])
+
+
     return (
         <div style={{ marginTop: -210 }}>
             <div className="main__container main__header fluid">
@@ -109,78 +132,78 @@ const Main = () => {
 
             </div>
 
-            <div className="scrollmagic-pin-spacer" style={{ inset: "auto", margin: "-200px auto -320px", display: "block", position: "relative", boxSizing: "content-box", width: "100%", minHeight: "1039px", height: "1039px", paddingTop: "9.05625px", paddingBottom: "2715.94px" }}>
-                <div  className="container pinContainer fluid" style={{ position: "", margin: "auto", inset: "201.4px auto auto 0px", boxSizing: "border-box", width: "1905px" }}>
-                    <div  style={{ height: "100vh" }}>
-                        <div  className="layout panel wrap panel-0" style={{ maxWidth: "80%", margin: "0px auto", opacity: 1 }}>
-                            <div  className="flex main-image-container xs12 md6">
-                                <img  src={Screen_3} alt="" className="main-image" />
+            <div ref={pinRef} className="scroll-pin" style={{ inset: "auto", margin: "-200px auto -320px", display: "block", position: "relative", boxSizing: "content-box", width: "100%", minHeight: "1039px", height: "1039px", paddingTop: "9.05625px", paddingBottom: "2715.94px" }}>
+                <div className="feature__container feature__pinContainer fluid" style={{ position: "", margin: "auto", inset: "201.4px auto auto 0px", boxSizing: "border-box", width: "1905px" }}>
+                    <div style={{ height: "100vh" }}>
+                        <div className="feature__layout feature__panel wrap panel-0" style={{ maxWidth: "80%", margin: "0px auto", opacity: 1 }}>
+                            <div className="feature__flex main-image-container xs12 md6">
+                                <img src={Screen_3} alt="" className="main-image" />
                             </div>
-                            <div  className="flex right-container xs12 md6">
-                                <img  src={icon_panel_1} alt="" className="icon" />
-                                <h2  className="title">We make it simple</h2>
-                                <p  className="text">Simple sleek design aiming to simplify the experience of ride requesting.</p>
-                            </div>
-                        </div>
-                        <div  className="layout panel wrap panel-1" style={{ maxWidth: "80%", margin: "0px auto", opacity: 1 }}>
-                            <div  className="flex main-image-container xs12 md6">
-                                <img  src={Screen_3} alt="" className="main-image" />
-                            </div>
-                            <div  className="flex right-container xs12 md6">
-                                <img  src={icon_panel_2} alt="" className="icon" />
-                                <h2  className="title">We pay attention to your details</h2>
-                                <p  className="text">We know your daily routine and the places that you head to on daily basis. We will let you favorite them so that you can get there by a single tap.</p>
+                            <div className="feature__flex right-container xs12 md6">
+                                <img src={icon_panel_1} alt="" className="icon" />
+                                <h2 className="title">We make it simple</h2>
+                                <p className="text">Simple sleek design aiming to simplify the experience of ride requesting.</p>
                             </div>
                         </div>
-                        <div  className="layout panel wrap panel-2" style={{ maxWidth: "80%", margin: "0px auto", opacity: 1 }}>
-                            <div  className="flex main-image-container xs12 md6">
-                                <img  src={Screen_4} alt="" className="main-image" />
+                        <div className="feature__layout feature__panel wrap panel-1" style={{ maxWidth: "80%", margin: "0px auto", opacity: 0 }}>
+                            <div className="feature__flex main-image-container xs12 md6">
+                                <img src={Screen_3} alt="" className="main-image" />
                             </div>
-                            <div  className="flex right-container xs12 md6">
-                                <img  src={icon_panel_3} alt="" className="icon" />
-                                <h2  className="title">We care about your safety</h2>
-                                <p  className="text">Before you step a foot in one of our cars, Ego will provide you with full details about the driver, car, and the rating. Not only that but we also provide you with an option to cancel the ride in case anything happened and you can immediately report it.</p>
-                            </div>
-                        </div>
-                        <div  className="layout panel wrap panel-3" style={{ maxWidth: "80%", margin: "0px auto", opacity: 1 }}>
-                            <div  className="flex main-image-container xs12 md6">
-                                <img  src={Screen_5} alt="" className="main-image" />
-                            </div>
-                            <div  className="flex right-container xs12 md6">
-                                <img  src={icon_panel_4} alt="" className="icon" />
-                                <h2  className="title">A Quiet world</h2>
-                                <p  className="text">We all have our moments of silence, our rough, exhausting days where we don’t feel like interacting with others or just prefer resting within our personal space. You can simply tap a button to ask for a quiet ride </p>
+                            <div className="feature__flex right-container xs12 md6">
+                                <img src={icon_panel_2} alt="" className="icon" />
+                                <h2 className="title">We pay attention to your details</h2>
+                                <p className="text">We know your daily routine and the places that you head to on daily basis. We will let you favorite them so that you can get there by a single tap.</p>
                             </div>
                         </div>
-                        <div  className="layout panel wrap panel-4" style={{ maxWidth: "80%", margin: "0px auto", opacity: 1 }}>
-                            <div  className="flex main-image-container xs12 md6">
-                                <img  src={Screen_1} alt="" className="main-image" />
+                        <div className="feature__layout feature__panel wrap panel-2" style={{ maxWidth: "80%", margin: "0px auto", opacity: 0 }}>
+                            <div className="feature__flex main-image-container xs12 md6">
+                                <img src={Screen_4} alt="" className="main-image" />
                             </div>
-                            <div  className="flex right-container xs12 md6">
-                                <img  src={icon_panel_5} alt="" className="icon" />
-                                <h2  className="title">We make it crystal clear</h2>
-                                <p  className="text">We care about displaying a correct, declarative receipt with a fare breakdown to make it easier for you to understand how you got charged.  We even save your remaining change to your personal secure wallet to use it in your next ride.</p>
+                            <div className="feature__flex right-container xs12 md6">
+                                <img src={icon_panel_3} alt="" className="icon" />
+                                <h2 className="title">We care about your safety</h2>
+                                <p className="text">Before you step a foot in one of our cars, Ego will provide you with full details about the driver, car, and the rating. Not only that but we also provide you with an option to cancel the ride in case anything happened and you can immediately report it.</p>
                             </div>
                         </div>
-                        <div  className="guide">
-                            <div  className="inner-guide inner-guide-1">
-                                <div  className="inner-guide-control" style={{ width: "29.5596px", height: "29.5596px" }}>
+                        <div className="feature__layout feature__panel wrap panel-3" style={{ maxWidth: "80%", margin: "0px auto", opacity: 0 }}>
+                            <div className="feature__flex main-image-container xs12 md6">
+                                <img src={Screen_5} alt="" className="main-image" />
+                            </div>
+                            <div className="feature__flex right-container xs12 md6">
+                                <img src={icon_panel_4} alt="" className="icon" />
+                                <h2 className="title">A Quiet world</h2>
+                                <p className="text">We all have our moments of silence, our rough, exhausting days where we don’t feel like interacting with others or just prefer resting within our personal space. You can simply tap a button to ask for a quiet ride </p>
+                            </div>
+                        </div>
+                        <div className="feature__layout feature__panel wrap panel-4" style={{ maxWidth: "80%", margin: "0px auto", opacity: 0 }}>
+                            <div className="feature__flex main-image-container xs12 md6">
+                                <img src={Screen_1} alt="" className="main-image" />
+                            </div>
+                            <div className="feature__flex right-container xs12 md6">
+                                <img src={icon_panel_5} alt="" className="icon" />
+                                <h2 className="title">We make it crystal clear</h2>
+                                <p className="text">We care about displaying a correct, declarative receipt with a fare breakdown to make it easier for you to understand how you got charged.  We even save your remaining change to your personal secure wallet to use it in your next ride.</p>
+                            </div>
+                        </div>
+                        <div className="guide">
+                            <div className="inner-guide inner-guide-1">
+                                <div className="inner-guide-control" style={{ width: "29.5596px", height: "29.5596px" }}>
                                 </div>
                             </div>
-                            <div  className="inner-guide inner-guide-2">
-                                <div  className="inner-guide-control" style={{ width: "0px;", height: "0px" }}>
+                            <div className="inner-guide inner-guide-2">
+                                <div className="inner-guide-control" style={{ width: "0px;", height: "0px" }}>
                                 </div>
                             </div>
-                            <div  className="inner-guide inner-guide-3">
-                                <div  className="inner-guide-control" style={{ width: "0px;", height: "0px" }}>
+                            <div className="inner-guide inner-guide-3">
+                                <div className="inner-guide-control" style={{ width: "0px;", height: "0px" }}>
                                 </div>
                             </div>
-                            <div  className="inner-guide inner-guide-4">
-                                <div  className="inner-guide-control" style={{ width: "0px;", height: "0px" }}>
+                            <div className="inner-guide inner-guide-4">
+                                <div className="inner-guide-control" style={{ width: "0px;", height: "0px" }}>
                                 </div>
                             </div>
-                            <div  className="inner-guide inner-guide-5">
-                                <div  className="inner-guide-control" style={{ width: "0px;", height: "0px" }}>
+                            <div className="inner-guide inner-guide-5">
+                                <div className="inner-guide-control" style={{ width: "0px;", height: "0px" }}>
                                 </div>
                             </div>
                         </div>
