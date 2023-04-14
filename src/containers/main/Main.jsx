@@ -9,27 +9,137 @@ import icon_panel_2 from '../../assets/icon-panel-2.svg'
 import icon_panel_3 from '../../assets/icon-panel-3.svg'
 import icon_panel_4 from '../../assets/icon-panel-4.svg'
 import icon_panel_5 from '../../assets/icon-panel-5.svg'
-import Screen_1 from '../../assets/Screen_2.png'
-import Screen_2 from '../../assets/Screen_3.png'
-import Screen_3 from '../../assets/Screen_1.png'
+import Screen_1 from '../../assets/Screen_1.png'
+import Screen_2 from '../../assets/Screen_2.png'
+import Screen_3 from '../../assets/Screen_3.png'
 import Screen_4 from '../../assets/Screen_4.png'
 import Screen_5 from '../../assets/Screen_5.png'
+
+import story_behind_1 from '../../assets/story-behind-1.svg'
+import story_behind_2 from '../../assets/story-behind-2.svg'
+import story_behind_3 from '../../assets/story-behind-3.svg'
+
 import './main.css'
 
 gsap.registerPlugin(ScrollTrigger);
 
 const Main = () => {
     const pinRef = useRef(null);
-    React.useLayoutEffect(() => {
+    const pinRef2 = useRef(null);
+    const guide = useRef(null);
+    const guide2 = useRef(null);
+    React.useEffect(() => {
         setTimeout(() => {
-            gsap.to(pinRef.current, {
+            gsap.defaults({
+                duration: 1,
+                ease: 'none'
+            });
+
+            const tl = gsap.timeline({
                 scrollTrigger: {
                     trigger: pinRef.current,
-                    start: "top 10%",
+                    start: "top 20%",
                     pin: true,
-                    markers: true
+                    scrub: true
                 }
-            });
+            })
+
+            const tl2 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: pinRef.current,
+                    start: "top 20%",
+                    pin: true,
+                    scrub: true
+                }
+            })
+
+            const tl3 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: pinRef2.current,
+                    start: "top top",
+                    pin: true,
+                    scrub: true
+                }
+            })
+
+            const tl4 = gsap.timeline({
+                scrollTrigger: {
+                    trigger: pinRef2.current,
+                    start: "top top",
+                    pin: true,
+                    scrub: true
+                }
+            })
+
+
+            tl.to('.panel-0', {
+                opacity: 0
+            }).to('.panel-1', {
+                opacity: 1
+            }).to('.panel-1', {
+                opacity: 0
+            }).to('.panel-2', {
+                opacity: 1
+            }).to('.panel-2', {
+                opacity: 0
+            }).to('.panel-3', {
+                opacity: 1
+            }).to('.panel-3', {
+                opacity: 0
+            }).to('.panel-4', {
+                opacity: 1
+            })
+
+            tl2.to('.guide>.inner-guide-1>.inner-guide-control', {
+                width: '0px',
+                height: '0px'
+            }).to('.guide>.inner-guide-2>.inner-guide-control', {
+                width: '30px',
+                height: '30px'
+            }).to('.guide>.inner-guide-2>.inner-guide-control', {
+                width: '0px',
+                height: '0px'
+            }).to('.guide>.inner-guide-3>.inner-guide-control', {
+                width: '30px',
+                height: '30px'
+            }).to('.guide>.inner-guide-3>.inner-guide-control', {
+                width: '0px',
+                height: '0px'
+            }).to('.guide>.inner-guide-4>.inner-guide-control', {
+                width: '30px',
+                height: '30px'
+            }).to('.guide>.inner-guide-4>.inner-guide-control', {
+                width: '0px',
+                height: '0px'
+            }).to('.guide>.inner-guide-5>.inner-guide-control', {
+                width: '30px',
+                height: '30px'
+            })
+
+            tl3.to('.panel2-0', {
+                opacity: 0
+            }).to('.panel2-1', {
+                opacity: 1
+            }).to('.panel2-1', {
+                opacity: 0
+            }).to('.panel2-2', {
+                opacity: 1
+            })
+
+            tl4.to('.middle__guide>.inner-guide-1>.inner-guide-control', {
+                width: "0px",
+                height: "0px"
+            }).to('.middle__guide>.inner-guide-2>.inner-guide-control', {
+                width: "40px",
+                height: "40px"
+            }).to('.middle__guide>.inner-guide-2>.inner-guide-control', {
+                width: "0px",
+                height: "0px"
+            }).to('.middle__guide>.inner-guide-3>.inner-guide-control', {
+                width: "40px",
+                height: "40px"
+            })
+
         }, 1000);
         //   ScrollTrigger.getById(".scrollmagic-pin-spacer").kill();
 
@@ -38,7 +148,7 @@ const Main = () => {
 
     return (
         <div style={{ marginTop: -210 }}>
-            <div className="main__container main__header fluid">
+            <div data-booted='true' className="content main__container main__header fluid">
                 <div className="header__layout wrap" style={{}}>
                     <div className="flex left-container xs12 md6">
                         <h1 className="title-1">Ride Safely</h1>
@@ -132,12 +242,12 @@ const Main = () => {
 
             </div>
 
-            <div ref={pinRef} className="scroll-pin" style={{ inset: "auto", margin: "-200px auto -320px", display: "block", position: "relative", boxSizing: "content-box", width: "100%", minHeight: "1039px", height: "1039px", paddingTop: "9.05625px", paddingBottom: "2715.94px" }}>
-                <div className="feature__container feature__pinContainer fluid" style={{ position: "", margin: "auto", inset: "201.4px auto auto 0px", boxSizing: "border-box", width: "1905px" }}>
+            <div ref={pinRef} className="scroll-pin" style={{ inset: "auto", margin: "-200px auto -320px", display: "block", position: "relative", boxSizing: "content-box", width: "100%", minHeight: "1039px", height: "1039px", paddingTop: "9.05625px", paddingBottom: "" }}>
+                <div className="feature__container pinContainer fluid" style={{ position: "", margin: "auto", inset: "201.4px auto auto 0px", boxSizing: "border-box", width: "1905px" }}>
                     <div style={{ height: "100vh" }}>
                         <div className="feature__layout feature__panel wrap panel-0" style={{ maxWidth: "80%", margin: "0px auto", opacity: 1 }}>
                             <div className="feature__flex main-image-container xs12 md6">
-                                <img src={Screen_3} alt="" className="main-image" />
+                                <img src={Screen_2} alt="" className="main-image" />
                             </div>
                             <div className="feature__flex right-container xs12 md6">
                                 <img src={icon_panel_1} alt="" className="icon" />
@@ -185,9 +295,9 @@ const Main = () => {
                                 <p className="text">We care about displaying a correct, declarative receipt with a fare breakdown to make it easier for you to understand how you got charged.  We even save your remaining change to your personal secure wallet to use it in your next ride.</p>
                             </div>
                         </div>
-                        <div className="guide">
+                        <div ref={guide.current} className="guide">
                             <div className="inner-guide inner-guide-1">
-                                <div className="inner-guide-control" style={{ width: "29.5596px", height: "29.5596px" }}>
+                                <div className="inner-guide-control" style={{ width: "30px", height: "30px" }}>
                                 </div>
                             </div>
                             <div className="inner-guide inner-guide-2">
@@ -210,6 +320,80 @@ const Main = () => {
                     </div>
                 </div>
             </div>
+
+
+
+            <div ref={pinRef2} className="scroll-pin" style={{ inset: "auto", margin: "auto auto 100px", display: "block", position: "relative", boxSizing: "content-box", width: "100%", minHeight: "1007px", height: "auto", paddingTop: "0px" }}>
+                <div className="feature__container pinContainer2 fluid" id="why-ego" style={{ position: "relative", margin: "auto", inset: "0px auto auto 0px", boxSizing: "border-box", width: "100%" }}>
+                    {/* <span className="small-title hidden-sm-and-up">Why Ego</span> */}
+
+                    <div className="feature__container fluid grid-list-xs" style={{ height: "100vh;" }}>
+                        <div className="feature2__layout feature2__panel wrap panel2-0" style={{ opacity: 1 }}>
+                            <div className="flex feature2__left-container md6 xs12">
+                                <h2 className="title">Affordable Luxury</h2>
+                                <p className="text">We provide you with affordable everyday rides that are very luxurious. Whether it be our high-end cars or premium ones, we always ensure a luxurious experience.</p>
+                            </div>
+                            <div className="flex feature2__right-container md6 xs12">
+                                <img src={story_behind_1} alt="" className="icon" />
+                            </div>
+                        </div>
+                        <div className="feature2__layout feature2__panel wrap panel2-1" style={{ opacity: 0 }}>
+                            <div className="flex feature2__left-container md6 xs12">
+                                <h2 className="title">We got your luggage</h2>
+                                <p className="text">Your ride to the airport is no longer painful. Ego's skilled drivers will help you with the luggage. You can request help with your luggage when ordering your next ride.</p>
+                            </div>
+                            <div className="flex feature2__right-container md6 xs12">
+                                <img src={story_behind_2} alt="" className="icon" />
+                            </div>
+                        </div>
+                        <div className="feature2__layout feature2__panel wrap panel2-2" style={{ opacity: 0 }}>
+                            <div className="flex feature2__left-container md6 xs12">
+                                <h2 className="title">You dream, we make it possible</h2>
+                                <p className="text">You can choose everything from the model of the car to other exciting ride options. We attentively listen to all your feedback and work on new features to make your rides more comfortable.</p>
+                            </div>
+                            <div className="flex feature2__right-container md6 xs12">
+                                <img src={story_behind_3} alt="" className="icon" />
+                            </div>
+                        </div>
+
+
+                        <div ref={guide2.current} className="middle__guide hidden-sm-and-down">
+                            <span className="guide-title">Why Ego</span>
+                            <div className="guide-line"></div>
+                            <div className="fixed">
+                            </div>
+                            <div className="inner-guide inner-guide-1">
+                                <div className="inner-guide-control" style={{ width: "40px", height: "40px" }}>
+                                </div>
+                            </div>
+                            <div className="inner-guide inner-guide-2">
+                                <div className="inner-guide-control" style={{ width: "0px", height: "0px" }}>
+                                </div>
+                            </div>
+                            <div className="inner-guide inner-guide-3">
+                                <div className="inner-guide-control" style={{ width: "0px", height: "0px" }}>
+                                </div>
+                            </div>
+                            <div className="fixed"></div>
+                        </div>
+                        {/* <div className="guide guide-small hidden-sm-and-up">
+                                <div className="guide-line"></div>
+                                <div className="fixed"></div>
+                                <div className="inner-guide inner-guide-1">
+                                    <div className="inner-guide-control" style={{width: "40px", height: "40px"}}></div>
+                                </div>
+                                <div className="inner-guide inner-guide-2">
+                                    <div className="inner-guide-control" style={{width: "0px", height: "0px"}}></div>
+                                </div>
+                                <div className="inner-guide inner-guide-3">
+                                    <div className="inner-guide-control" style={{width: "0px", height: "0px"}}></div>
+                                </div>
+                                <div className="fixed"></div>
+                            </div> */}
+                    </div>
+                </div>
+            </div>
+
 
         </div>
     );
